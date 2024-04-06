@@ -126,6 +126,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    math (0.0.1)
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.20.0)
@@ -244,6 +245,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  math
   pg
   puma (>= 5.0)
   rails (~> 7.1.2)
