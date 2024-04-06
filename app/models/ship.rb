@@ -8,6 +8,7 @@ class Ship < ApplicationRecord
     distance = range(otherShipID)
     sign = (otherShip.y_location - y_location) / distance
     radian = Math.asin(sign)
-    radian * 180 / Math::PI
+    relativeBearing = radian * 180 / Math::PI
+    mapBearing = 90 - relativeBearing
   end
 end
