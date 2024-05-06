@@ -1,0 +1,9 @@
+<h1>Rails Server-Sent Events Demo</h1>
+
+<script>
+  const eventSource = new EventSource("/events")
+
+  eventSource.addEventListener("message", (event) => { 
+    console.log(event)
+  })
+</script>

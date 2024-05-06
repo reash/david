@@ -1,0 +1,35 @@
+<h1>Rails Server-Sent Events Demo</h1>
+
+<script>
+  alert("Hello from Javascript");
+</script>
+<section id="events">Hello</section>
+  puts "before events"
+<script>
+
+  alert("Hello from Javascript 2");
+ </script>
+<script> 
+  events = document.getElementById("events") 
+  events.innerHTML +='Before eventSource'
+
+  const eventSource = new EventSource("/events")
+
+  events = document.getElementById("events") 
+  events.innerHTML += '<p>Top</p>'
+  eventSource.addEventListener("message",(event) => { 
+    const events = document.getElementById("events") 
+    events.innerHTML += '<p>$(event.data)</p>'
+    events.innerHTML += '<p>Test</p>'
+  })
+
+  eventSource.addEventListner("error",(event) => {
+    console.log(event)
+
+    if (event.eventParse === EventSource.CLOSED) {
+      EventSource.close()
+      console.log(Event Source Closed")
+    }
+  })
+</script>
+

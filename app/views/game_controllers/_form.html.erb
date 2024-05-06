@@ -1,0 +1,27 @@
+<%= form_with(model: game_controller) do |form| %>
+  <% if game_controller.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(game_controller.errors.count, "error") %> prohibited this game_controller from being saved:</h2>
+
+      <ul>
+        <% game_controller.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :go, style: "display: block" %>
+    <%= form.number_field :go %>
+  </div>
+
+  <div>
+    <%= form.label :comment, style: "display: block" %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

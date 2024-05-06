@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @game_controller %>
+
+<div>
+  <%= link_to "Edit this game controller", edit_game_controller_path(@game_controller) %> |
+  <%= link_to "Back to game controllers", game_controllers_path %>
+
+  <%= button_to "Destroy this game controller", @game_controller, method: :delete %>
+</div>
